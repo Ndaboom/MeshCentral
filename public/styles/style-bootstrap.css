@@ -3650,6 +3650,150 @@ body:not(.fullscreen) .notifiyBox {
         min-width: 100vw !important;
     }
 
+    #p11 {
+        --desktop-mobile-toolbar-gap: 0.35rem;
+        --desktop-mobile-stream-offset: 340px;
+        --desktop-mobile-stream-offset-stacked: 366px;
+        --desktop-mobile-footer-clearance: 58px;
+    }
+
+    .fullscreen.fulldesk #container {
+        width: 100vw !important;
+        min-width: 100vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+        display: -ms-grid !important;
+        display: grid !important;
+        grid-template-areas: "content" !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: minmax(0, 1fr) !important;
+        -ms-grid-columns: 1fr !important;
+        -ms-grid-rows: 1fr !important;
+    }
+
+    #p11title {
+        gap: 0.5rem;
+        min-width: 0;
+        width: 100%;
+    }
+
+    #p11title .fs-4 {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #p11KeyboardLights {
+        flex: 0 0 auto;
+        margin-left: auto !important;
+    }
+
+    #p11title #devListToolbarViewIcons {
+        display: block !important;
+        flex: 0 0 auto;
+    }
+
+    .fulldesk #column_l {
+        grid-area: content;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        width: 100vw;
+        min-width: 0;
+        background-color: black;
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+    }
+
+    .fulldesk #p11 {
+        height: 100%;
+        min-height: 0;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .fulldesk #deskarea0 {
+        height: 100%;
+        min-height: 0;
+        min-width: 0;
+        width: 100%;
+        grid-template-rows: max-content minmax(0, 1fr) max-content;
+        grid-template-areas: "deskarea1" "deskarea3" "deskarea4";
+        -ms-grid-rows: max-content 1fr max-content;
+    }
+
+    .fulldesk #deskarea3x {
+        min-height: 0;
+        max-height: none !important;
+        height: 100% !important;
+        -ms-grid-row: 2;
+    }
+
+    .fulldesk #deskarea4 {
+        -ms-grid-row: 3;
+    }
+
+    #deskarea3x {
+        max-height: calc(100vh - var(--desktop-mobile-stream-offset) - var(--desktop-mobile-footer-clearance));
+        max-height: calc(100dvh - var(--desktop-mobile-stream-offset) - var(--desktop-mobile-footer-clearance));
+        height: calc(100vh - var(--desktop-mobile-stream-offset) - var(--desktop-mobile-footer-clearance));
+        height: calc(100dvh - var(--desktop-mobile-stream-offset) - var(--desktop-mobile-footer-clearance));
+    }
+
+    .room4submenu #deskarea3x {
+        max-height: calc(100vh - var(--desktop-mobile-stream-offset-stacked) - var(--desktop-mobile-footer-clearance));
+        max-height: calc(100dvh - var(--desktop-mobile-stream-offset-stacked) - var(--desktop-mobile-footer-clearance));
+        height: calc(100vh - var(--desktop-mobile-stream-offset-stacked) - var(--desktop-mobile-footer-clearance));
+        height: calc(100dvh - var(--desktop-mobile-stream-offset-stacked) - var(--desktop-mobile-footer-clearance));
+    }
+
+    #deskarea1, #deskarea4 {
+        gap: var(--desktop-mobile-toolbar-gap);
+        min-width: 0;
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: thin;
+    }
+
+    #deskarea1 > .d-flex, #deskarea4 > .d-flex {
+        flex-wrap: wrap;
+        gap: var(--desktop-mobile-toolbar-gap);
+        min-width: 0;
+    }
+
+    #deskarea1 > .d-flex.ms-auto, #deskarea4 > .d-flex.ms-auto {
+        margin-left: 0 !important;
+    }
+
+    #deskarea4 {
+        align-items: center;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        flex-shrink: 0;
+        min-height: max-content;
+    }
+
+    #deskarea4 > .d-flex {
+        flex: 1 1 100%;
+    }
+
+    #deskarea4 .btn-sm, #deskarea4 .form-select-sm {
+        flex: 0 0 auto;
+    }
+
+    #DeskMonitorSelectionSpan {
+        max-width: 100%;
+    }
+
+    .fulldesk #idx_deskFullBtn2 {
+        display: block;
+        flex: 0 0 auto;
+    }
+
 
     /* #container {
         width: 100vw !important;
