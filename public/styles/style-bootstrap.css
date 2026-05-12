@@ -3770,23 +3770,110 @@ body:not(.fullscreen) .notifiyBox {
     }
 
     #deskarea4 {
+        display: flex;
         align-items: center;
+        flex-wrap: nowrap;
+        gap: var(--desktop-mobile-toolbar-gap);
         padding-left: 0.25rem;
         padding-right: 0.25rem;
         flex-shrink: 0;
-        min-height: max-content;
+        min-height: 0;
     }
 
-    #deskarea4 > .d-flex {
-        flex: 1 1 100%;
+    #deskarea4 > div {
+        float: none;
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    #deskarea4 > div:not(.toright2) {
+        order: 1;
+    }
+
+    #deskarea4 > div:nth-child(2) {
+        order: 2;
+        margin-left: auto;
+    }
+
+    #deskarea4 > div:first-child {
+        order: 3;
     }
 
     #deskarea4 .btn-sm, #deskarea4 .form-select-sm {
         flex: 0 0 auto;
     }
 
-    #DeskMonitorSelectionSpan {
-        max-width: 100%;
+    @media (pointer: coarse), (max-width: 520px) {
+        #deskarea4 {
+            flex-wrap: wrap;
+            overflow-x: hidden;
+            overflow-y: visible;
+            row-gap: 0.25rem;
+        }
+
+        #deskarea4 > div:first-child {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            justify-content: flex-end;
+            margin-left: 0;
+            order: 1;
+            position: static;
+            white-space: normal;
+            width: 100%;
+        }
+
+        #deskarea4 > div:first-child > span,
+        #deskarea4 > div:first-child > input {
+            align-items: center;
+            background: var(--bs-body-bg);
+            border: 1px solid var(--bs-border-color);
+            border-radius: 0.5rem;
+            display: inline-flex;
+            height: 2rem;
+            justify-content: center;
+            margin: 0;
+            min-width: 2rem;
+            padding: 0.2rem 0.55rem;
+        }
+
+        #deskarea4 > div:first-child > span:empty,
+        #DeskLatency,
+        #DeskTimer {
+            display: none;
+        }
+
+        #deskarea4 > div:first-child > #DeskToolsButton {
+            border-radius: 0.5rem;
+            height: auto;
+            min-width: 3.25rem;
+        }
+
+        #deskarea4 .desktopButtons {
+            height: 1.35rem;
+            width: 1.35rem;
+        }
+
+        #deskarea4 > div:nth-child(2) {
+            margin-left: 0;
+            order: 2;
+        }
+
+        #deskarea4 > div:not(.toright2) {
+            display: flex;
+            flex: 1 1 100%;
+            gap: 0.35rem;
+            order: 3;
+            overflow: hidden;
+        }
+
+        #deskarea4 > div:not(.toright2) input,
+        #deskarea4 > div:not(.toright2) label,
+        #deskarea4 > div:not(.toright2) select {
+            min-width: 0;
+        }
     }
 
     .fulldesk #idx_deskFullBtn2 {
