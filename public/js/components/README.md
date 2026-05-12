@@ -4,7 +4,6 @@ This directory contains reusable browser-global UI helpers used by `default3.han
 
 ## Structure
 
-- `foundation/`: low-level UI wrappers such as modal and card classes.
 - `core/`: shared DOM utilities used by components.
 - `modals/`: modal invocation helpers and reusable modal flows.
 - `forms/`: form-oriented modal helpers.
